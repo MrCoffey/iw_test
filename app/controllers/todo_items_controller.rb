@@ -18,6 +18,11 @@ class TodoItemsController < ApplicationController
 		end		
 	end
 
+	def complete
+		@todo_item.update_attribute(:completed_at, Time.now)
+		redirect_to @todo_list, notice: "Item completed !"
+	end
+
 	private
 
 	def todo_items_params
