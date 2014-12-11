@@ -1,7 +1,10 @@
 class TodoItem < ActiveRecord::Base
-  belongs_to :todo_list
+	#Listando de menor a mayor
+	default_scope { order(created_at: :desc) }	
 
-  def completed?
-  	!completed_at.blank?
-  end
+	belongs_to :todo_list
+
+	def completed?
+ 		!completed_at.blank?
+	end
 end

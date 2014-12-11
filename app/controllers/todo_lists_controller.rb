@@ -3,7 +3,7 @@ class TodoListsController < ApplicationController
 
   def index
     @todo_list = TodoList.find_by_id(params[:id])
-    @todo_lists = TodoList.all
+    @todo_lists = TodoList.all.order("created_at DESC")
   end
 
   def show
