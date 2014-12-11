@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="col-md-12 text-center"><h1>Listing Todo Lists</h1></div>
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="list-group" id="list1">
 
-<h1>Listing Todo Lists</h1>
+                <p id="notice"><%= notice %></p>
+                <div class="list-group-item">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @todo_lists.each do |todo_list| %>
-      <tr>
-        <td><%= todo_list.title %></td>
-        <td><%= todo_list.description %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Todo list', new_todo_list_path %>
+                    <% @todo_lists.each do |todo_list| %>
+                        <div class="list-group-item ">
+                            <div class="item row">
+                                <div class="col-xs-3">
+                                    <h4><%=link_to todo_list.title, todo_list %></h4>
+                                </div>
+                                <div class="col-xs-7">
+                                    <p><%=todo_list.description%></p>
+                                </div>
+                                <%= link_to edit_todo_list_path(todo_list), class: 'btn btn-default' do%>
+                                    <i class="fa fa-pencil"></i>
+                                <% end %>
+                                <%= link_to todo_list, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do%>
+                                    <i class='fa fa-trash'></i>
+                                <% end %> 
+                            </div>
+                        </div>
+                    <% end %>
+                    <%= link_to 'New Todo list', new_todo_list_path, class: 'btn btn-default' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

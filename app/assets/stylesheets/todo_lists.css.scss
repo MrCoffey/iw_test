@@ -1,3 +1,32 @@
 // Place all the styles related to the todo_lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 a:hover{
+	text-decoration: none;
+	color: #3498db;
+}
+h3 a:visited{
+	font-size: 20px;
+	color: #fff;
+}
+h3 a:hover{
+	text-decoration: none;
+	color: #9b59b6;
+}
+
+a:hover {
+	background-color: transparent;
+}
+
+p.help-block {
+	color: #fff;
+}
+i.fa.fa-trash {
+	color: #3498db;
+	font-size: 20px;
+}
+i.fa.fa-check {
+	color: #3498db;
+	font-size: 20px;
+}

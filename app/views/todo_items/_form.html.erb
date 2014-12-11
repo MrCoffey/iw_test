@@ -1,4 +1,6 @@
-<%= form_for ([@todo_list, @todo_list.todo_items.build]) do |f| %>
-	<%= f.text_field :title, placeholder: "New Item" %>
-	<%= f.submit %>
+<%= form_for ([@todo_list, @todo_list.todo_items.build]), class: "form-inline", role: "form" do |f| %>
+	<div class="form-group">
+		<%= f.text_field :title, placeholder: "New Item", class: "form-control" %>
+	</div>
+	<button type="submit" class="btn btn-default">Create</button>
 <% end %>
