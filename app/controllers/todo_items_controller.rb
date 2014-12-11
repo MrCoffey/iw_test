@@ -1,5 +1,5 @@
 class TodoItemsController < ApplicationController
-	before_action :set_todo_lists
+	before_action :set_todo_list
 	before_action :set_todo_items, except: [:create]
 
 	def create
@@ -29,7 +29,7 @@ class TodoItemsController < ApplicationController
 		params[:todo_item].permit(:title)
 	end
 
-	def set_todo_lists
+	def set_todo_list
 		@todo_list = TodoList.find(params[:todo_list_id])
 	end
 

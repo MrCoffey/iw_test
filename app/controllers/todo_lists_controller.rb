@@ -2,10 +2,12 @@ class TodoListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
   def index
+    @todo_list = TodoList.find_by_id(params[:id])
     @todo_lists = TodoList.all
   end
 
   def show
+    @todo_lists = TodoList.all
   end
 
 

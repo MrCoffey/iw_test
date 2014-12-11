@@ -1,21 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo_list.title %>
-</p>
+<% @todo_lists.each do |list|%>
+	<p>
+	  <strong>Title:</strong>
+	  <%= list.title %>
+	</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @todo_list.description %>
-</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= list.description %>
+	</p>
 
-<div>
-	<%= render @todo_list.todo_items %>
 	<div>
-		<%= render 'todo_items/form' %>
+		<%= render list.todo_items %>
+		<div>
+			<%= render 'todo_items/form' %>
+		</div>
 	</div>
-</div>
 
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>
+	<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+	<%= link_to 'Back', todo_lists_path %>
+
+<% end %>
