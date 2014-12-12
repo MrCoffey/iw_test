@@ -18,6 +18,12 @@ group :development, :test do
   gem 'spring'
 end
 
+#Heroku
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
 #Styles
 gem 'sass-rails', '~> 5.0.0.beta1'
 gem "twitter-bootstrap-rails"
