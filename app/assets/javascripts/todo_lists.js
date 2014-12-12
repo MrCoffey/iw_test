@@ -1,6 +1,10 @@
+//Hace un toggle en la lista de los items
+
 var main = function() {
-	$('.list-group-item').click(function(){
-		$('.description').toggle();
+	$('i').click(function(){
+		$(this).toggleClass('fa-chevron-up');	
+			$('.description').toggle();
 	});
 };
 $(document).ready(main);
+

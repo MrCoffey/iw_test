@@ -4,6 +4,7 @@
             <div class="list-group" id="list1">
 
                 <p id="notice"><%= notice %></p>
+                <% if @todo_lists.count > 0%>
                 <div class="list-group-item">
 
                     <% @todo_lists.each do |todo_list| %>
@@ -29,7 +30,64 @@
                     <% end %>
                     <%= link_to 'New Todo list', new_todo_list_path, class: 'btn btn-default' %>
                 </div>
+                <% else %>
+                <div class="jumbotron" >
+                    <h2>
+                        Hi there!, it's time to start being productive!
+                        <p>
+                            Lets get started creating a new project.
+                        </p>
+                        <p>
+                        <%= link_to new_todo_list_path, class: 'btn btn-default' do%>
+                            <i class="fa fa-plus-square-o">  New Todo list</i>
+                            <% end %> 
+                        </p>       
+                    </h2>
+                    <p class="help">
+                        Time reading losing time, rather than working. 
+                        <i class="fa fa-clock-o"></i>
+                    </p>
+                    <div id="cronometro" class="botonReiniciar"></div>
+                </div>
+                <% end %>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+//Muestra el cronometro
+
+var inicioConteo,
+idTimeout,
+cronometro = document.querySelector("#cronometro"),
+botonReiniciar = document.querySelector(".botonReiniciar");
+
+function zeroIzq(n){
+return n.toString().replace(/^(d)$/,"0$1");
+}
+
+function formatoSegundos(s){
+return zeroIzq(Math.floor(s / 3600))+":"+zeroIzq(Math.floor(s%3600 / 60))+":"+zeroIzq(Math.floor((s%3600)%60));
+}
+
+function actualizar(){
+var dif = Date.now() - inicioConteo;
+dif = Math.round(dif / 1000);
+cronometro.innerHTML = formatoSegundos(dif);
+idTimeout = setTimeout(actualizar,1000);
+}
+
+function iniciar(){
+clearTimeout(idTimeout);
+inicioConteo = Date.now();
+actualizar();
+}
+
+//botonReiniciar.onclick = function(){
+//iniciar();
+//}
+
+iniciar();
+</script>

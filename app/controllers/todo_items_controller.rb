@@ -26,7 +26,7 @@ class TodoItemsController < ApplicationController
 	private
 
 	def todo_items_params
-		params[:todo_item].permit(:title)
+		params[:todo_item].permit(:title, :total_time)
 	end
 
 	def set_todo_list

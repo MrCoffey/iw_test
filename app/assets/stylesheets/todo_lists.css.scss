@@ -30,3 +30,24 @@ i.fa.fa-check {
 	color: #3498db;
 	font-size: 20px;
 }
+
+.fa-chevron-down, .fa-chevron-up {
+	cursor: pointer;
+}
+
+div.col-xs-5 p {
+	opacity: 0.6;
+		-moz-opacity: 0.6;
+		-webkit-opacity: 0.6;
+}
+
+div#cronometro {
+	font-size: 50px;
+	padding-top: 10px;
+}
+
+p.help{
+	opacity: 0.6;
+		-moz-opacity: 0.6;
+		-webkit-opacity: 0.6;
+}

@@ -2,5 +2,10 @@
 	<div class="form-group">
 		<%= f.text_field :title, placeholder: "New Item", class: "form-control" %>
 	</div>
-	<button type="submit" class="btn btn-default">Create</button>
+	<div class="form-group">
+		<div class='input-group date' id='stop'>
+			<%= f.time_select :total_time, include_seconds: true%>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-default">Create task</button>
 <% end %>
