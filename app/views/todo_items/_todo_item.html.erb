@@ -9,10 +9,12 @@
 			<div class="col-xs-4">
 				<% @complete_time = todo_item.completed_at%>
 				<% @created_time = todo_item.created_at%>
-    			<%# @full_time = Time.at(@total_time).strftime("The date is %H:%M:%S") %>
 				<% @diff_hours = ((@complete_time - @created_time) / 1.hour).round%>
-				<%= @diff_hours %>
-				<%#= todo_item.completed_at.strftime("You spent %H:%M:%S")%>
+				<% @hours = TimeDifference.between(@complete_time, @created_time).in_hours.to_i %>
+				<% @minutes = TimeDifference.between(@complete_time, @created_time).in_minutes.to_i %>
+				<% @seconds = TimeDifference.between(@complete_time, @created_time).in_seconds.to_i.round %>
+				<% @spent_time = [@hours, @minutes, @seconds].join(':')%>	
+				<p> You spent <%=@spent_time%></p>
 			</div>
 			<div class="col-xs-3">
 				<%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?" }, class: "pull-right" do%>

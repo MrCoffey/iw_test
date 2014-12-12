@@ -25,3 +25,5 @@ gem 'devise-bootstrap-views'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter' 
+
+gem 'time_difference'
