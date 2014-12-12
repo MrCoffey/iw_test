@@ -34,5 +34,5 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter' 
 
-#Diferencia de horas
+#gem for handling the differences between created and completed times 
 gem 'time_difference'
