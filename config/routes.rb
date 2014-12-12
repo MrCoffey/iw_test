@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
-  root 'todo_lists#index'
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  
+  root 'home#wellcome'
 
   resources :todo_lists do
     resources :todo_items do

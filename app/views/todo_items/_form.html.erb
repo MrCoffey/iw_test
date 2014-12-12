@@ -1,23 +1,17 @@
-<div class="list-group-item">
-	<form class= "form-inline" role= "form"><!--Esto no se debe hacer pero era para que se viera bonito-->
-	<%= form_for ([@todo_list, @todo_list.todo_items.build]) do |f| %>
-				<div class="form-group">
-					<%= f.text_field :title, placeholder: "New Item", class: "form-control" %>
-				</div>
-				<button type="submit" class="btn btn-default">Create task</button>
-				<div class="form-group">
-					<div class="form-group">
-						<label class="checkbox-inline">
-						<%= f.check_box :custom%> Do you want to use a custom time?
-						</label>
-					</div>
+<%= form_for ([@todo_list, @todo_list.todo_items.build]),html: { class: "form-inline", role: "form" } do |f| %>
+	<div class="form-group">
+		<%= f.text_field :title, placeholder: "New Item", class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<div class="form-group">
+			<label class="checkbox-inline">
+			<%= f.check_box :custom%> Do you want to use a custom time?
+			</label>
+		</div>
 
-					<div class='input-group date' id='stop'>
-						<%= f.time_select :total_time, include_seconds: true%>
-					</div>
-
-				</div>
-
-	</form>
-	<% end %>
-</div>
+		<div class='input-group date' id='stop'>
+			<%= f.time_select :total_time, include_seconds: true%>
+		</div>
+		<%= f.submit%>
+	</div>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="jumbotron">
+	      <div class="container">
+	        <h1>Hello there!</h1>
+	        <p>Introducing a brand new way to take care your tasks and discover productivity.</p>
+	        <%= link_to "Sign up »",new_user_registration_path, class: "btn btn-custom btn-lg"%>
+	        <span class="span-or">or</span>
+	        <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), class: "btn btn-custom btn-lg" %>
+	      </div>
+	</div>
+</div>
+   
