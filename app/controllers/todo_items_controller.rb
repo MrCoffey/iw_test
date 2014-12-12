@@ -4,13 +4,13 @@ class TodoItemsController < ApplicationController
 
 	def create
 		@todo_item = @todo_list.todo_items.create(todo_items_params)
-		redirect_to @todo_list, notice: "New item created!"
+		redirect_to @todo_list, notice: "New task created!"
 	end
 
 	def destroy
 		if @todo_item.destroy
 			#Forma corta
-			redirect_to @todo_list, notice: "Item deleted"
+			redirect_to @todo_list, notice: "Task deleted"
 		else
 			#Forma larga
 			redirect_to @todo_list
@@ -20,7 +20,7 @@ class TodoItemsController < ApplicationController
 
 	def complete
 		@todo_item.update_attribute(:completed_at, Time.now)
-		redirect_to @todo_list, notice: "Item completed !"
+		redirect_to @todo_list, notice: "Taks completed !"
 	end
 
 	private

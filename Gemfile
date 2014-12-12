@@ -18,12 +18,15 @@ group :development, :test do
   gem 'spring'
 end
 
+#Styles
 gem 'sass-rails', '~> 5.0.0.beta1'
 gem "twitter-bootstrap-rails"
 
+#Autentication
 gem 'devise-bootstrap-views'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter' 
 
+#Diferencia de horas
 gem 'time_difference'

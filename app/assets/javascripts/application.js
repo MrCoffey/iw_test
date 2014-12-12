@@ -16,3 +16,6 @@
 //= require bootstrap-datetimepicker.min
 //= require turbolinks
 //= require_tree .
+
+//Flash fadeOut
+$(".alert").delay(200).addClass("in").fadeOut(4000);
